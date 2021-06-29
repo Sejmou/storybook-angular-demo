@@ -1,0 +1,9 @@
+<div class="card" [ngClass]="'card--' + size">
+    <h2 style="text-align: center;">{{title}}</h2>
+    <div class="content">
+        <ng-content></ng-content>
+    </div>
+    <div class="actions-wrapper">
+        <app-my-button (buttonClick)="onButtonClick()"></app-my-button>
+    </div>
+</div>

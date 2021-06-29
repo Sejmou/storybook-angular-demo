@@ -1,0 +1,16 @@
+.btn {
+    display: inline-block;
+    text-decoration: none;
+    text-transform: uppercase; 
+    color: white;
+    font-weight: 900;
+    background-color: #1c54bd;
+    padding: .75em 2em;
+    border-radius: 100px;
+    border: 2px solid lightgrey;
+}
+
+.btn:hover,
+.btn:focus {
+    opacity: .75; 
+}

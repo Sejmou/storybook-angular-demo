@@ -1,0 +1,31 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid grey;
+    border-radius: 5px;
+}
+
+.card--large {
+    width: 800px;
+}
+
+.card--medium {
+    width: 600px;
+}
+
+.card--small {
+    width: 400px;
+}
+
+.content {
+    padding: 0.5em;
+}
+
+.actions-wrapper {
+    padding: 1em 0;
+    border-top: 1px solid lightgray;
+}
+
+.actions-wrapper app-my-button {
+    margin: 1em 0.5em;
+}

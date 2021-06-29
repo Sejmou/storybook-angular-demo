@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 type CardSize = 'large' | 'medium' | 'small';
 
@@ -21,7 +21,7 @@ export class MyCardComponent {
   /**
    * click handler
    */
-  actionClick: EventEmitter<void> = new EventEmitter<void>();
+  @Output() actionClick: EventEmitter<void> = new EventEmitter<void>();
 
   onButtonClick() {
     this.actionClick.emit();

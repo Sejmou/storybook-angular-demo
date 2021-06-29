@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-my-button',
@@ -6,9 +6,15 @@ import { Component, EventEmitter, Input, OnInit } from '@angular/core';
   styleUrls: ['./my-button.component.css']
 })
 export class MyButtonComponent {
+  /**
+   * The text for the button
+   */
   @Input() text: string = 'Action';
 
-  buttonClick: EventEmitter<void> = new EventEmitter<void>();
+  /**
+   * event, triggered if button is clicked
+   */
+  @Output() buttonClick: EventEmitter<void> = new EventEmitter<void>();
 
   handleClick() {
     this.buttonClick.emit();

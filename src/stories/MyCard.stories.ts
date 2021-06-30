@@ -2,6 +2,7 @@ import { moduleMetadata } from '@storybook/angular';
 import { CommonModule } from '@angular/common';
 // also exported from '@storybook/angular' if you can deal with breaking changes in 6.1
 import { Story, Meta } from '@storybook/angular/types-6-0';
+import { componentWrapperDecorator } from '@storybook/angular';
 
 import { MyButtonComponent } from '../app/my-button/my-button.component';
 import { MyCardComponent } from '../app/my-card/my-card.component';
@@ -12,14 +13,15 @@ export default {
     decorators: [
         moduleMetadata({
             declarations: [MyButtonComponent, MyCardComponent],
-            imports: [CommonModule],
+            // imports: [CommonModule], //not needed
         }),
+        // componentWrapperDecorator(MyCardComponent) // this would project the showcased MyCardComponent of each story into another MyCardComponent with default args lol
     ],
 } as Meta;
 
 const Template: Story<MyCardComponent> = (args: MyCardComponent) => ({
     props: args,
-    template: `<app-my-card [title]="title"> This is inserted using content projection.<br>Test </app-my-card>`
+    template: `<app-my-card [title]="title" [size]="size"> This is inserted using content projection.<br>Test </app-my-card>`
 });
 
 export const Small = Template.bind({});

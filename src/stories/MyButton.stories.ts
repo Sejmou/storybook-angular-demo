@@ -11,7 +11,7 @@ export default {
     decorators: [
         moduleMetadata({
             declarations: [MyButtonComponent],
-            imports: [CommonModule],
+            // imports: [CommonModule], //not needed
         }),
     ],
 } as Meta;

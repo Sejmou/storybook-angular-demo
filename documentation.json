@@ -54,7 +54,7 @@
         },
         {
             "name": "MyButtonComponent",
-            "id": "component-MyButtonComponent-dab0a3a5e1a66e34a57af6f438184ae8",
+            "id": "component-MyButtonComponent-f52e2c93292b95f44fa4c24c2965c3b1",
             "file": "src/app/my-button/my-button.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -74,7 +74,8 @@
                 {
                     "name": "text",
                     "defaultValue": "'Action'",
-                    "line": 9,
+                    "description": "<p>The text for the button</p>\n",
+                    "line": 12,
                     "type": "string"
                 }
             ],
@@ -82,7 +83,8 @@
                 {
                     "name": "buttonClick",
                     "defaultValue": "new EventEmitter<void>()",
-                    "line": 11,
+                    "description": "<p>event, triggered if button is clicked</p>\n",
+                    "line": 17,
                     "type": "EventEmitter<void>"
                 }
             ],
@@ -94,7 +96,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 13
+                    "line": 19
                 }
             ],
             "hostBindings": [],
@@ -102,7 +104,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\n\n@Component({\n  selector: 'app-my-button',\n  templateUrl: './my-button.component.html',\n  styleUrls: ['./my-button.component.css']\n})\nexport class MyButtonComponent {\n  @Input() text: string = 'Action';\n\n  @Output() buttonClick: EventEmitter<void> = new EventEmitter<void>();\n\n  handleClick() {\n    this.buttonClick.emit();\n  }\n}\n",
+            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\n\n@Component({\n  selector: 'app-my-button',\n  templateUrl: './my-button.component.html',\n  styleUrls: ['./my-button.component.css']\n})\nexport class MyButtonComponent {\n  /**\n   * The text for the button\n   */\n  @Input() text: string = 'Action';\n\n  /**\n   * event, triggered if button is clicked\n   */\n  @Output() buttonClick: EventEmitter<void> = new EventEmitter<void>();\n\n  handleClick() {\n    this.buttonClick.emit();\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -176,7 +178,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".card {\r\n    display: flex;\r\n    flex-direction: column;\r\n    border: 1px solid grey;\r\n    border-radius: 5px;\r\n}\r\n\r\n.card--large {\r\n    width: 800px;\r\n}\r\n\r\n.card--medium {\r\n    width: 600px;\r\n}\r\n\r\n.card--small {\r\n    width: 400px;\r\n}\r\n\r\n.content {\r\n    padding: 0.5em;\r\n}\r\n\r\n.actions-wrapper {\r\n    padding: 1em 0;\r\n    border-top: 1px solid lightgray;\r\n}\r\n\r\n.actions-wrapper app-my-button {\r\n    margin: 1em 0.5em;\r\n}",
+                    "data": ".card {\r\n    display: flex;\r\n    flex-direction: column;\r\n    border: 1px solid grey;\r\n    border-radius: 5px;\r\n}\r\n\r\n.card--large {\r\n    max-width: 800px;\r\n}\r\n\r\n.card--medium {\r\n    max-width: 600px;\r\n}\r\n\r\n.card--small {\r\n    max-width: 400px;\r\n}\r\n\r\n.content {\r\n    padding: 0.5em;\r\n}\r\n\r\n.actions-wrapper {\r\n    padding: 1em 0;\r\n    border-top: 1px solid lightgray;\r\n}\r\n\r\n.actions-wrapper app-my-button {\r\n    margin: 1em 0.5em;\r\n}",
                     "styleUrl": "./my-card.component.css"
                 }
             ],
@@ -308,7 +310,7 @@
                 "subtype": "variable",
                 "file": "src/stories/MyCard.stories.ts",
                 "type": "Story<MyCardComponent>",
-                "defaultValue": "(args: MyCardComponent) => ({\r\n    props: args,\r\n    template: `<app-my-card [title]=\"title\"> This is inserted using content projection.<br>Test </app-my-card>`\r\n})"
+                "defaultValue": "(args: MyCardComponent) => ({\r\n    props: args,\r\n    template: `<app-my-card [title]=\"title\" [size]=\"size\"> This is inserted using content projection.<br>Test </app-my-card>`\r\n})"
             }
         ],
         "functions": [],
@@ -411,7 +413,7 @@
                     "subtype": "variable",
                     "file": "src/stories/MyCard.stories.ts",
                     "type": "Story<MyCardComponent>",
-                    "defaultValue": "(args: MyCardComponent) => ({\r\n    props: args,\r\n    template: `<app-my-card [title]=\"title\"> This is inserted using content projection.<br>Test </app-my-card>`\r\n})"
+                    "defaultValue": "(args: MyCardComponent) => ({\r\n    props: args,\r\n    template: `<app-my-card [title]=\"title\" [size]=\"size\"> This is inserted using content projection.<br>Test </app-my-card>`\r\n})"
                 }
             ]
         },
@@ -433,7 +435,7 @@
     },
     "routes": [],
     "coverage": {
-        "count": 4,
+        "count": 8,
         "status": "low",
         "files": [
             {
@@ -450,9 +452,9 @@
                 "type": "component",
                 "linktype": "component",
                 "name": "MyButtonComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/4",
-                "status": "low"
+                "coveragePercent": 50,
+                "coverageCount": "2/4",
+                "status": "medium"
             },
             {
                 "filePath": "src/app/my-card/my-card.component.ts",
